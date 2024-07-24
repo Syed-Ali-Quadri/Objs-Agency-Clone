@@ -45,6 +45,32 @@ function loaderJS(){
     tl.to('#loader', {
         display: 'none'
     });
+
+    tl.from('.nav', {
+        opacity:0
+    }, 'shit');
+
+    tl.from('#hero1 h1, #hero2 h1, #hero3 h2, #hero3 h3, #hero4 h1', {
+        y: 150,
+        stagger:0.1,
+        duration:0.4,
+    }, 'shit');
 };
 
 loaderJS();
+
+// Cursor Animation Javascript
+function cursorJS(){
+    document.addEventListener('mousemove', (elem)=>{
+        gsap.to('#crsr', {
+            top: elem.y,
+            left: elem.x,
+        });
+    });
+
+    Shery.makeMagnet(".nav-part2 h4"); // Make elements magnet effect
+};
+
+cursorJS();
+
+// Page 01 Javascript
