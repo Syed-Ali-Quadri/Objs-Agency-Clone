@@ -1,3 +1,23 @@
+@font-face {
+    font-family: "Plain Light";
+    src: url(./fonts/plain-regular-webfont.ttf);
+}
+
+@font-face {
+    font-family: "Plain Light";
+    src: url(./fonts/plain-light-webfont.ttf);
+}
+
+@font-face {
+    font-family: "silk serif";
+    src: url(./fonts/silkserif-regularitalic-webfont.ttf);
+}
+
+@font-face {
+    font-family: "silk serif";
+    src: url(./fonts/silkserif-lightitalic-webfont.ttf);
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -6,5 +26,93 @@
 body,html{
     height: 100%;
     width: 100%;
-    font-family: "Poppins", sans-serif;
+    font-family: "Plain Light";
+    color: white;
+}
+.main {
+    position: relative;
+    background-color: #020202;
+}
+/* Initial Loading Animation */
+#loader{
+    width: 100%;
+    height: 100%;
+    background-color: #020202;
+    position: fixed;
+    z-index: 999;
+    padding: 15vh 8vw;
+}
+.loader-line {
+    height: fit-content;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3.5vw;
+    line-height: 7.5vw;
+}
+.loading-timer{
+    display: flex;
+    align-items:flex-start;
+    gap: 1vw;
+}
+.loading-timer h5, .loading-timer h6{
+    font-family: 'silk serif';
+    font-weight: 200;
+    font-size: 3vw;
+}
+.loading-timer h5{
+    text-align: right;
+    width: 5vw;
+}
+.loader-line h1{
+    font-size: 7vw;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.loader-line h2{
+    font-size: 6.5vw;
+    font-weight: 900;
+    text-transform: uppercase;
+    animation-duration: 1.9s;
+    animation-iteration-count: infinite;
+    opacity: 0;
+}
+
+@keyframes loading-text-animation {
+    0%{
+        font-family: "Plain Light";
+        color: white;
+        font-weight: 900;
+        opacity: 1;
+    } 
+    47%{
+        font-family: "Plain Light";
+        color: white;
+        font-weight: 900;
+        opacity: 0;
+    }
+    50%{
+        font-family: "Silk Serif";
+        -webkit-text-stroke: 1px #fff;
+        color: transparent;
+        font-weight: 500;
+        opacity: 1;
+    }
+    100%{
+        font-family: "Silk Serif";
+        -webkit-text-stroke: 1px #fff;
+        color: transparent;
+        font-weight: 500;
+        opacity: 0;
+    }
+}
+
+
+
+
+#page1{
+    height: 100vh;
+    width: 100%;
+    background-color: #151515;
 }
