@@ -50,7 +50,7 @@ function loaderJS(){
         opacity:0
     }, 'shit');
 
-    tl.from('#hero1 h1, #hero2 h1, #hero3 h2, #hero3 h3, #hero4 h1', {
+    tl.from('#hero1 h1, #hero2 h1, #hero3 h3, #hero4 h1', {
         y: 150,
         stagger:0.1,
         duration:0.4,
@@ -61,16 +61,30 @@ loaderJS();
 
 // Cursor Animation Javascript
 function cursorJS(){
-    document.addEventListener('mousemove', (elem)=>{
-        gsap.to('#crsr', {
-            top: elem.y,
-            left: elem.x,
-        });
+    const page2VideoCont = document.querySelector('.page2-video-container');
+    const cursor = document.getElementById('crsr');
+    
+    page2VideoCont.addEventListener('mousemove', (event) => {
+        // cursor.style.opacity = 0;
+        // console.log(event);
+        // gsap.from('.video-m-hover', {
+        //     left: event.x,
+        //     top: event.y,
+        //     duration: 0.3,
+        //     ease: 'power1.out',
+        //     position: 'fixed',
+        // });
     });
+
+    document.addEventListener('mousemove', (elem)=>{
+        cursor.style.transform = `translate(${elem.clientX}px, ${elem.clientY}px)`;
+    });
+
+
 
     Shery.makeMagnet(".nav-part2 h4"); // Make elements magnet effect
 };
 
 cursorJS();
 
-// Page 01 Javascript
+// Page 02 Javascript
